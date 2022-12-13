@@ -13,7 +13,7 @@ public abstract class Person {
 public class Student : Person{
 	public int Year ;
 	public float GPA ;
-	public Student (string n, int a, int y, int g){
+	public Student (string n, int a, int y, int g):base(name, age){
 		name=n;
 		age =a;
 		Year = y;
