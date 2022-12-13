@@ -2,25 +2,23 @@ using System;
 namespace Program;
 
 public abstract class Person {
-	public string name;
-	public int age ;
-	public Person (string myname, int a){
-		name = myname;
-		age = a;
+	public string Name;
+	public int Age ;
+	public Person (string name, int age){
+		Name = name;
+		Age = age;
 	}
 	public abstract void Print();
 } 
 public class Student : Person{
 	public int Year ;
 	public float GPA ;
-	public Student (string n, int a, int y, int g):base(name, age){
-		name=n;
-		age =a;
+	public Student (string name, int age, int y, int g):base(name, age){
 		Year = y;
 		GPA =g;
 	}
 	public override void Print(){
-		Console.WriteLine($"My name is {0} and my GPA is {1}", name, GPA);
+		Console.WriteLine($"My name is {0} and my GPA is {1}", Name, GPA);
 	}
 }
 
@@ -42,20 +40,19 @@ public class Database {
 public class Staff: Person {
 	public double Salary;
 	public int JoinYear;
-	public Staff (string myname, int a, double salary, int jyear){
-		name = myname;
-		age = a;
+	public Staff (string name, int age, double salary, int jyear): base(name, age){
 		Salary = salary;
 		JoinYear = jyear;
 	}
 	public override void Print(){
-		Console.WriteLine($"My name is {0}, my age is {1}, and my salary is {2}", name, age, Salary);
+		Console.WriteLine($"My name is {0}, my age is {1}, and my salary is {2}", Name, Age, Salary);
 	}
 }
 
 public class MainProgram {
 	public static void Main(){
 		var database = new Database();
+		Console.WriteLine("Choose 1 for  student, 2 for staff, 3 for printing all people");
 		Console.Write("Name: ");
 		var name = Console.ReadLine();
 		Console.Write("Age: ");
