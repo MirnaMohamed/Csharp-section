@@ -5,7 +5,7 @@ public abstract class Person {
 	public string Name;
 	public int age ;
 	public Person (string name, int a){
-		Name = n;
+		Name = name;
 		age = a;
 	}
 	public abstract void Print();
@@ -20,7 +20,7 @@ public class Student : Person{
 		GPA =g;
 	}
 	public override void Print(){
-		Console.WriteLine($"My name is {0} and my GPA is {1}", name, GPA);
+		Console.WriteLine($"My name is {0} and my GPA is {1}", Name, GPA);
 	}
 }
 
@@ -35,6 +35,15 @@ public class Database {
 public class Staff: Person {
 	public double Salary;
 	public int JoinYear;
+	public Staff (string name, int a, double salary, int jyear){
+		Name = name;
+		age = a;
+		Salary = salary;
+		JoinYear = jyear;
+	}
+	public override void Print(){
+		Console.WriteLine($"My name is {0}, my age is {1}, and my salary is {2}", Name, age, Salary);
+	}
 }
 
 public class MainProgram {
