@@ -30,6 +30,9 @@ public class Database {
 	public void AddStudent(Student student){
 		People[currentIndex++] = student;
 	}
+	public void AddStaff(Staff staff){
+		People[currentIndex++] = staff;
+	}
 }
 
 public class Staff: Person {
